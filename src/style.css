@@ -1,0 +1,62 @@
+h3 {
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h4 {
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 10px;
+}
+
+h5 {
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.search input {
+  margin: 20px auto 20px 20px;
+  padding: 5px 40% 5px 5px;
+  border-color: grey;
+  border-width: 2px;
+  border-radius: 15px;
+}
+
+.search button {
+  margin: 5px auto 20px 5px;
+  padding: 5px 5px 5px 5px;
+  border-color: grey;
+  border-width: 2px;
+  border-radius: 15px;
+  transition: all 150ms ease-in-out;
+}
+
+.search button:hover {
+  background-color: #5b7186;
+  color: white;
+}
+
+.now .icon {
+  text-align: right;
+  margin-top: 40px;
+}
+
+.temperature {
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 70px;
+}
+.forecast {
+  display: block;
+  margin: 0 auto;
+}
+
+.forecast img {
+  display: block;
+  margin: 0 auto;
+}
+
+.forecast p {
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
