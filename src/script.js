@@ -39,26 +39,35 @@ searchForm.addEventListener("submit", searchCity);
 
 //Change temperature according to the search
 
-function displayWeather(response) {
-  let temperature = Math.round(response.data.main.temp);
-  let city = response.data.name;
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = `It is currently ${temperature} °C in ${city}`;
+function displayWeatherCondition(response) {
+  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#temperature").innerHTML = Math.round(
+    response.data.main.temp
+  );
+
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].main;
 }
 
-let city = cityInput;
-let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${apiKey}&units=metric`;
+function useSearch(search) {
+  let city = ${cityInput};
+  let apiKey = "29594a25547d56b13ac551c486d0f7a6";
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${apiKey}&units=metric`;
+  axios.get(url).then(displayWeatherCondition);
+}
 
-axios.get(url).then(displayWeather);
+// Get current position with its weather for the button
 
-// Get current position for the button
-
-function getPosition(position) {
+function getPositionWeather(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let apiKey = "29594a25547d56b13ac551c486d0f7a6";
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
-  axios.get(url).then(getTemperature);
+  axios.get(url).then(displayWeatherCondition);
 }
 
-navigator.geolocation.getCurrentPosition(getPosition);
+// get Location
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(getPositionWeather);
+}
