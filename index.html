@@ -12,17 +12,21 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="container">
       <section class="search">
-        <form class="searchForm" id="search-form">
+        <form class="search-form" id="search-form">
           <input
             type="search"
             placeholder="Type in your city..."
             id="city-input"
+            autofocus="on"
+            autocomplete="off"
           />
           <button type="submit">Search</button>
+          <button type="Submit" id="current-location-button">Current</button>
         </form>
       </section>
 
@@ -33,9 +37,10 @@
           </div>
           <div class="col order-5"></div>
           <div class="col order-1">
-            <h3 id="city">Toronto</h3>
-            <h4 class="date"></h4>
-            <p class="temperature">28°C</p>
+            <h3 id="city"></h3>
+            <h4 id="date"></h4>
+            <h5 id="discription"></h5>
+            <p class="temperature"><span class="units">°C</span></p>
           </div>
         </div>
       </section>
